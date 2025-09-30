@@ -1,0 +1,177 @@
+.flex {
+  display: flex;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.collumn {
+  flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+nav {
+  max-width: 1100px;
+  padding: 28px 100px;
+  margin: auto;
+}
+
+.social {
+  gap: 25px;
+}
+
+.links {
+  gap: 32px;
+}
+
+.perfil {
+  max-width: 567px;
+  gap: 30px;
+  flex-shrink: 0;
+}
+.perfil button {
+  display: flex;
+  padding: 21px 64px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.foto {
+  max-width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.marcas {
+  gap: 30px;
+}
+.marcas button {
+  width: 160px;
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.marcas img {
+  max-width: 70px;
+}
+
+body {
+  background-color: black;
+}
+
+.branco {
+  color: white;
+}
+
+nav {
+  border-radius: 0 0 6px 6px;
+  background: #1B1B1B;
+}
+
+a {
+  text-decoration: none;
+  color: #9C9C9C;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+a:hover {
+  color: white;
+}
+
+i {
+  color: #9C9C9C;
+}
+
+i:hover {
+  color: white;
+}
+
+.perfil h1 {
+  align-self: stretch;
+  color: #FFF;
+  font-family: "Raleway", sans-serif;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+.perfil h3 {
+  align-self: stretch;
+  color: #FFF;
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+.perfil p {
+  align-self: stretch;
+  font-family: "IBM Plex Mono", monospace;
+  color: #9C9C9C;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 22.4px */
+}
+.perfil button {
+  border-radius: 4px;
+  border: 1px solid #62BA1B;
+  background: #3F8E00;
+  box-shadow: 0 8px 30px 0 rgba(63, 142, 0, 0.5);
+  color: #FFF;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.curriculo h3 {
+  color: #FFF;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.curriculo .marcas button {
+  background-color: black;
+  border-radius: 6px;
+  border: 1px solid #1B1B1B;
+}
+
+/*# sourceMappingURL=style.css.map */
