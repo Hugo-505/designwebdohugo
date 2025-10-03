@@ -44,6 +44,18 @@ nav {
   padding: 28px 100px;
   margin: auto;
 }
+nav .sanduiche {
+  display: none;
+}
+nav .open {
+  display: flex;
+  padding: 30px;
+  align-items: flex-start;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 16px;
+}
 
 .social {
   gap: 25px;
@@ -120,6 +132,11 @@ i:hover {
   color: white;
 }
 
+#botao-nav {
+  background-color: transparent;
+  border: none;
+}
+
 .perfil h1 {
   align-self: stretch;
   color: #FFF;
@@ -162,7 +179,7 @@ i:hover {
 
 .curriculo h3 {
   color: #FFF;
-  font-family: "Raleway", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -172,6 +189,88 @@ i:hover {
   background-color: black;
   border-radius: 6px;
   border: 1px solid #1B1B1B;
+}
+
+/* responsive.scss */
+@media (max-width: 668px) {
+  body {
+    margin: 0;
+  }
+  header {
+    max-width: 100%;
+    margin: 0;
+  }
+  header nav {
+    max-width: 440px;
+    flex-direction: row-reverse;
+    padding: 20px 20px;
+    margin: 0;
+  }
+  header nav .links {
+    display: none;
+    align-self: center;
+  }
+  header nav .sanduiche {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  header nav .sanduiche p {
+    color: #9C9C9C;
+    font-family: "IBM Plex Mono", monospace;
+  }
+  header nav .open {
+    display: flex;
+    flex-direction: column;
+    transform: translateX(70%);
+    top: 60px;
+    left: 16px;
+    background: #1B1B1B;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5333333333);
+    z-index: 10;
+  }
+  .informacoes {
+    flex-direction: column-reverse;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .informacoes .perfil {
+    max-width: 352px;
+    margin: 0;
+  }
+  .informacoes img {
+    max-width: 350px;
+  }
+  .curriculo {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 55px;
+  }
+  .curriculo .container {
+    width: 100%;
+    gap: 10px;
+  }
+  .curriculo .marcas {
+    max-width: 100%;
+    justify-content: flex-start;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+  .curriculo .marcas button {
+    display: inline-flex;
+    scroll-snap-align: start;
+    min-width: 180px;
+    height: 72px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
