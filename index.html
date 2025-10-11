@@ -1,39 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revisão</title>
+    <title>Portifolio</title>
+    <script src="https://kit.fontawesome.com/8c63b5e0f6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <li>
-        Box Model
-    </li>
-    <li>
-        Display
-    </li>
-    <li>
-        Position
-    </li>
-    <li>
-        Flexbox
-    </li>
+<body class="bg-black">
     <style>
-        .pai {
-            top: 50dvh;
-
-            position: relative;
+        .font-ibm {
+            font-family: "IBM Plex Mono", monospace;
         }
-        .filho {
-            position: absolute;
-            
+        .font-rale {
+            font-family: "Raleway", sans-serif;
         }
-
+        
     </style>
-    <div class="pai">
-        <div class="filho">
+    <header class="m-auto flex justify-center">
+        <nav class="bg-zinc-800
+                    flex
+                    justify-between
+                    w-6xl
+                    
+                    px-30
+                    py-7
+                    flex-row-reverse
+                    md:flex-row">
 
-        </div>
-    </div>
+            <div class="flex
+                        md:hidden 
+                        ">
+                
+                <button class="">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <p>
+                    Menu
+                </p>
+                
+            </div>
+            <div class="hidden
+                        gap-8
+                        font-ibm
+                        md:flex">
+                <a href="" class="text-zinc-500">
+                    Estudos de Caso
+                </a>
+                <a href="" class="text-zinc-500">
+                    Trabalhos
+                </a>
+                <a href="" class="text-zinc-500">
+                    Entre em Contato
+                </a>
+            </div>
+
+            
+
+            <div class="flex
+                        gap-6">
+                <i class="fa-brands fa-linkedin text-zinc-500"></i>
+                <i class="fa-brands fa-behance text-zinc-500"></i>
+                <i class="fa-brands fa-twitter text-zinc-500"></i>
+            </div>
+            
+        </nav>
+    </header>
+    <main>
+        <section class="flex
+                        justify-center
+                        items-center
+                        gap-8">
+
+            <div class="flex
+                        flex-col
+                        
+                        w-xl
+                        gap-5">
+
+                <div class="flex
+                            flex-col
+                            gap-2">
+
+                    <h1 class="text-5xl
+                               font-rale
+                               font-extrabold
+                               text-white ">
+                        Victor Hugo
+                    </h1>
+                    <h3 class="text-2xl
+                               font-rale
+                               font-extralight
+                               text-white ">
+                        UIX e Dev Front-End
+                    </h3>
+                </div>
+                
+                <p class="text-sm
+                          font-normal
+                          font-ibm
+                          text-zinc-500  ">
+                    Sou um profissional híbrido que une Design, Engenharia e Produto para entregar soluções de ponta a ponta. Através do Ateliê Web, construo a presença digital de pequenas empresas com WordPress. No Fluxo Ágil, aplico e dissemino práticas ágeis para otimizar processos. E no Lapi, transformo ideias experimentais em produtos inovadores. Meu foco é  sempre entregar, medir e iterar com base em métricas de negócio e na  experiência do usuário.
+                </p>
+                <button class="text-white
+                               px-16
+                               py-5
+                               bg-lime-600
+                               w-sm
+                               shadow-[0_8px_30px_0_rgba(63,142,0,0.5)] ">
+                    Vamos trabalhar juntos >
+                </button>
+
+            </div>
+            <figure class="w-sm
+                           rounded-full ">
+                <img src="assets/img/file 1.png" alt="Foto de perfil" class="rounded-full">
+            </figure>
+        </section>
+        <section class="flex
+                        justify-center 
+                        m-auto 
+                        items-center
+                        pb-8">
+            <div class="flex
+                        flex-col
+                        w-5xl
+                        gap-5">
+                <h3 class="text-white">
+                    Trabalhou em: 
+                </h3>
+                <div class="flex
+                            gap-8
+                            ">
+                    <button class="w-40
+                                   h-60px 
+                                   px-9
+                                   
+                                   flex
+                                   items-center
+                                   justify-center
+                                   border-1
+                                   rounded-md
+                                   border-zinc-500 ">
+                        <img src="assets/img/Frame 2.svg"
+                         alt="Logo agencia web" 
+                         class="w-20">
+                    </button>
+                    <button class="w-40
+                                   px-9
+                                   py-5
+                                   border-1
+                                   rounded-md
+                                   border-zinc-500
+                                   ">
+                        <img src="assets/img/clickup logo 1.png" alt="Logo fluxo ágil" class="">
+                    </button>
+                    <button class="w-40
+                                   px-9
+                                   py-5
+                                   border-1
+                                   rounded-md
+                                   border-zinc-500 ">
+                        <img src="assets/img/NAVI_logo.svg" alt="Logo do Navi" class="w-20">
+                    </button>
+                    <button class="w-40
+                                   px-9
+                                   py-5
+                                   border-1
+                                   rounded-md
+                                   border-zinc-500 ">
+                        <img src="assets/img/dropbox_blue 1.png" alt="Logo Dropbox" class="w-20">
+                    </button>
+                    <button class="w-40
+                                   px-9
+                                   py-5
+                                   border-1
+                                   rounded-md
+                                   border-zinc-500 ">
+                        <img src="assets/img/Elastic logo 1.png" alt="Logo Elastic" class="">
+                    </button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    
 </body>
 </html>
