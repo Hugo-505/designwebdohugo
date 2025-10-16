@@ -4,90 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/8c63b5e0f6.js" crossorigin="anonymous"></script>
-    <script src="assets/scripts/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .font-ibm { font-family: "IBM Plex Mono", monospace; }
+        .font-rale { font-family: "Raleway", sans-serif; }
+    </style>
 </head>
-<body>
-    <header>
-        <nav class="flex justify-between items-center">
-            <div class="sanduiche">
-                
-                <button id="botao-nav" onclick="mostrarmenu()">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-                <p>
-                    Menu
-                </p>
-                
-            </div>
-            <div class="links flex items-center">
-                <a href="">
-                    Estudos de Caso
-                </a>
-                <a href="">
-                    Trabalhos
-                </a>
-                <a href="">
-                    Entre em Contato
-                </a>
-            </div>
+<body class="bg-black text-white">
 
+    <header class="bg-zinc-900 flex justify-center">
+        <nav class="flex justify-between items-center w-full max-w-6xl px-6 py-7 md:px-10 lg: flex-row-reverse">
+            <div class="flex items-center gap-2 md:hidden">
+                <button>
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+                <p class="font-ibm">Menu</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="#"><i class="fa-brands fa-linkedin text-zinc-500 hover:text-white"></i></a>
+                <a href="#"><i class="fa-brands fa-behance text-zinc-500 hover:text-white"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter text-zinc-500 hover:text-white"></i></a>
+            </div>
+            
             
 
-            <div class="social flex items-center">
-                <i class="fa-brands fa-linkedin"></i>
-                <i class="fa-brands fa-behance"></i>
-                <i class="fa-brands fa-twitter"></i>
+            <div class="hidden gap-8 font-ibm md:flex">
+                <a href="#" class="text-zinc-500 hover:text-white">Estudos de Caso</a>
+                <a href="#" class="text-zinc-500 hover:text-white">Trabalhos</a>
+                <a href="#" class="text-zinc-500 hover:text-white">Entre em Contato</a>
             </div>
             
         </nav>
     </header>
-    <main>
-        <section class="informacoes flex justify-center items-center">
-            <div class="perfil flex collumn justify-center itemns-start">
-                <h1>
-                    Victor Hugo
-                </h1>
-                <h3>
-                    UIX e Dev Front-End
-                </h3>
-                <p>
-                    Sou um profissional híbrido que une Design, Engenharia e Produto para entregar soluções de ponta a ponta. Através do Ateliê Web, construo a presença digital de pequenas empresas com WordPress. No Fluxo Ágil, aplico e dissemino práticas ágeis para otimizar processos. E no Lapi, transformo ideias experimentais em produtos inovadores. Meu foco é  sempre entregar, medir e iterar com base em métricas de negócio e na  experiência do usuário.
+
+    <main class="px-6">
+        
+        <section class="flex flex-col-reverse items-start gap-10 mt-10
+                         lg:flex-row lg:justify-center lg:items-center lg:gap-16">
+
+            
+            <div class="flex flex-col gap-5 w-full max-w-lg">
+
+                <div class="flex flex-col gap-2">
+                    <h1 class="text-5xl font-rale font-extrabold">
+                        Bruno Nakamura
+                    </h1>
+                    <h3 class="text-2xl font-rale font-extralight">
+                        UX e Dev Front-end
+                    </h3>
+                </div>
+                
+                <p class="text-sm font-normal font-ibm text-zinc-400">
+                    Sou um híbrido raro: Design Systems + Engenharia de Produto. Entrego de ponta a ponta – da descoberta à produção – com métricas de negócio na cabeceira e DX/UX no detalhe. Tradução simultânea entre PMs, Design, Front, Back e Data. Sem teatrinho: shippo, meço, repito.
                 </p>
-                <button>
+                <button class="text-white px-8 py-4 bg-lime-600 w-full md:w-auto rounded-md
+                               shadow-[0_8px_30px_0_rgba(63,142,0,0.5)] hover:bg-lime-500 self-start">
                     Vamos trabalhar juntos >
                 </button>
 
             </div>
-            <figure>
-                <img src="assets/img/file 1.png" alt="Foto de perfil" class="foto">
-            </figure>
+
+            
+            <div class="w-full flex justify-center lg:w-auto">
+                <figure class="w-64 h-64 md:w-80 md:h-80 flex-shrink-0">
+                    <img src="assets/img/file 1.png" alt="Foto de perfil de Bruno Nakamura" class="rounded-full w-full h-full object-cover">
+                </figure>
+            </div>
         </section>
-        <section class="curriculo flex justify-center items-center">
-            <div class="container flex justify-center collumn itemns-start">
-                <h3>
+
+        
+        <section class="py-20 lg:flex lg:flex-col lg:justify-center lg:items-center">
+            <div class="flex flex-col gap-5 max-w-5xl mx-auto">
+                <h3 class="font-ibm text-left">
                     Trabalhou em: 
                 </h3>
-                <div class="marcas flex justify-center itemns-start ">
-                    <button>
-                        <img src="assets/img/Frame 2.svg" alt="Logo agencia web">
+                
+                
+                <div class="flex gap-4 overflow-x-auto pb-4
+                            lg:overflow-visible lg:justify-start lg:gap-8">
+                    
+                    <button class="h-16 w-36 flex-shrink-0 flex items-center justify-center border rounded-md border-zinc-700 hover:bg-zinc-900">
+                        <img src="assets/img/clickup logo 1.png" alt="Logo ClickUp" class="w-20">
                     </button>
-                    <button>
-                        <img src="assets/img/Frame 9(1).png" alt="Logo fluxo ágil">
+                    <button class="h-16 w-36 flex-shrink-0 flex items-center justify-center border rounded-md border-zinc-700 hover:bg-zinc-900">
+                        <img src="assets/img/dropbox_blue 1.png" alt="Logo Dropbox" class="w-24">
                     </button>
-                    <button class="branco">
-                        <img src="assets/img/NAVI_logo.svg" alt="Logo do Navi">
+                    <button class="h-16 w-36 flex-shrink-0 flex items-center justify-center border rounded-md border-zinc-700 hover:bg-zinc-900">
+                        <img src="assets/img/Elastic logo 1.png" alt="Logo Elastic" class="w-20">
                     </button>
-                    <button>
-                        <img src="assets/img/dropbox_blue 1.png" alt="Logo Dropbox">
+                    <button class="h-16 w-36 flex-shrink-0 flex items-center justify-center border rounded-md border-zinc-700 hover:bg-zinc-900">
+                        <img src="assets/img/Frame 2.svg" alt="Logo Ateliê Web" class="w-20">
                     </button>
-                    <button>
-                        <img src="assets/img/Elastic logo 1.png" alt="Logo Elastic">
+                    <button class="h-16 w-36 flex-shrink-0 flex items-center justify-center border rounded-md border-zinc-700 hover:bg-zinc-900">
+                        <img src="assets/img/NAVI_logo.svg" alt="Logo Navi" class="w-20">
                     </button>
+
                 </div>
             </div>
-
         </section>
     </main>
     
