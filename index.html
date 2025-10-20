@@ -1,39 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revisão</title>
+    <title>Layout</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <li>
-        Box Model
-    </li>
-    <li>
-        Display
-    </li>
-    <li>
-        Position
-    </li>
-    <li>
-        Flexbox
-    </li>
-    <style>
-        .pai {
-            top: 50dvh;
+<body class="pt-5">
+    <header class="container mx-auto">
+        
+        <nav class="flex justify-between items-center">
+            <h1 class="text-3xl font-bold">
+                Company
+            </h1>
+            <menu class="flex gap-14 items-center">
+                <li>
+                    Sobre
+                </li>
+                <li>
+                    Professores
+                </li>
+                <li>
+                    Projetos
+                </li>
+                <li>
+                    Alunos
+                </li>
+                <li>
+                    <button class="rounded-xl bg-black text-white w-31 h-11">
+                        Button
+                    </button>
+                </li>
+            </menu>
+        </nav>
+    </header>
+    <main class="container mx-auto">
+        <section class="flex flex-col bg-zinc-200 items-center justify-center gap-10">
+            <h1 class="">
+                Depois de muita espera, ela finalmente chegou!
+            </h1>
+            <p class="max-w-135 text-center">
+                O formulário para aquisição da camisa está oficialmente aberto! Com um design original e dois modelos únicos, você vai poder mostrar todo o seu orgulho de fazer parte dessa turma incrível!
+            </p>
+            <div class="flex">
+                <a href="">
+                    Ser Feliz
+                </a>
+                <a href="">
+                    Ser triste
+                </a>
+            </div>
+        </section>
+        <section>
+            <ul>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+            </ul>
+        </section>
+        <section>
+            <div>
+                <strong>
+                    Ela é bonita
+                </strong>
+                <span>
+                    Além de linda, é a mais top
+                </span>
+            </div>
+            <div>
+                <strong>
+                    O azul destaque
+                </strong>
+                <span>
+                    O azul royal ficou para trás. Contemple um azul esmeralda
+                </span>
+            </div>
+            <div>
+                <strong>
 
-            position: relative;
-        }
-        .filho {
-            position: absolute;
-            
-        }
+                </strong>
+                <span>
 
-    </style>
-    <div class="pai">
-        <div class="filho">
-
-        </div>
-    </div>
+                </span>
+            </div>
+        </section>
+        <section class="">
+            <figure class="max-w-304">
+                <img src="img/cb-color.avif" alt="">
+            </figure>
+            <h2 class="text-3xl">
+                Alunos que já compraram.
+            </h2>
+            <p class="w-157 text-center">
+                Junte aos milhares de alunos de info que já estão vestindo a nossa camiseta linda e maravilhosa.
+            </p>
+            <div class="grid grid-cols-3">
+                <div>
+                    <h3>
+                        234+
+                    </h3>
+                    <p>
+                        Alunos
+                    </p>
+                </div>
+                <div>
+                    <h3>
+                        38,903+
+                    </h3>
+                    <p>
+                        Alunos
+                    </p>
+                </div>
+                <div>
+                    <h3>
+                        154+
+                    </h3>
+                    <p>
+                        Alunos
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
