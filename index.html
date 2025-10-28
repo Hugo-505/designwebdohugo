@@ -4,36 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revisão</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/8c63b5e0f6.js" crossorigin="anonymous"></script>
 </head>
+<style>
+    body {
+        font-family: "Sora", sans-serif;
+        
+        font-variant-numeric: lining-nums tabular-nums;
+        
+    }
+</style>
 <body>
-    <li>
-        Box Model
-    </li>
-    <li>
-        Display
-    </li>
-    <li>
-        Position
-    </li>
-    <li>
-        Flexbox
-    </li>
-    <style>
-        .pai {
-            top: 50dvh;
-
-            position: relative;
-        }
-        .filho {
-            position: absolute;
+    <main>
+        <section class="pl-10 my-10">
+            <figure>
+                <img src="img/banner.png" alt="">
+            </figure>
+        </section>
+        <section class="pl-10 mb-95">
+            <h2 class="text-xl text-black font-semibold mb-6">
+                Compre pontos e distribua como quiser
+            </h2>
+            <section class="flex gap-8">
+                <div class="card bg-base-100 w-80 shadow-sm py-6">
+                    <figure>
+                      <img
+                        src="img/ponto.png"
+                        alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                      
+                      <p class="text-sm mb-4">Desenvolvimento, consultoria ou UX/UI para seus projetos decolarem.</p>
+                      <div>
+                        <h2 class="flex items-center justify-between text-black font-bold text-base">
+                            Comprar créditos
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </h2>
+                        <p>
+                            5 créditos por R$10.000,00
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card bg-base-100 w-80 shadow-sm py-6">
+                    <figure>
+                      <img
+                        src="img/ponto(1).png"
+                        alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                      
+                      <p class="text-sm mb-4">Desenvolvimento de projeto de ponta a ponta, com nível de complexidade média com super desconto.</p>
+                      <div>
+                        <h2 class="flex items-center justify-between text-black font-bold text-base">
+                            Comprar créditos
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </h2>
+                        <p>
+                            21 créditos por R$120.000,00
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card bg-base-100 w-80 shadow-sm py-6">
+                    <figure>
+                      <img
+                        src="img/ponto(2).png"
+                        alt="Shoes" />
+                    </figure>
+                    <div class="card-body">
+                      
+                      <p class="text-sm mb-4">Descontos cumulativos para projetos em Wordpress para 2025.</p>
+                      <div>
+                        <h2 class="flex items-center justify-between text-black font-bold text-base">
+                            Comprar créditos
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </h2>
+                        <p>
+                            21 créditos por R$12.000,00
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+            </section>
             
-        }
-
-    </style>
-    <div class="pai">
-        <div class="filho">
-
-        </div>
-    </div>
+        </section>
+    </main>
+    <footer class="flex justify-end  px-13 py-4 border-t pl-10">
+        <figure>
+            <img src="img/Vector.png" alt="">
+        </figure>
+    </footer>
 </body>
 </html>
