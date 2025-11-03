@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/8c63b5e0f6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+</head>
+<body class="font-[Sora]">
+    <header class="max-w-480 px-8 py-4">
+        <div class="flex justify-between items-center">
+            <figure>
+                <img src="img/logo (2).png" alt="">
+            </figure>
+            <div class="flex gap-2 items-center">
+                <img src="img/perfil.png" alt="" class="max-w-8 max-h-8">
+                <div class="flex flex-col">
+                    <strong>
+                        John Doe
+                    </strong>
+                    <p>
+                        Agência Web
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+       
+    </header>
+    <main>
+        <div class="flex">
+            <section class="flex flex-col px-16  h-268 gap-8 border-x mr-8">
+                <h2 class="text-2xl text-center font-semibold">
+                    Canal do cliente
+                </h2>
+                
+                <a href="" class="text-sm font-bold">
+                    <i class="fa-solid fa-building-columns"></i>
+                    Loja de projetos
+                    <ul class="pl-8 flex flex-col gap-1">
+                        <li>
+                            <a href="index.html">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="creditos.html" class="font-bold text-blue-800">Compra de creditos</a>
+                        </li>
+                        <li>
+                            <a href="">Concluídos</a>
+                        </li>
+                    </ul>
+                </a>
+                <a href="" class="text-sm  font-bold">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Dashboard
+
+                </a>
+                <a href="" class="text-sm font-bold">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    Campanhas
+                </a>
+
+            </section>
+            <section>
+                <section>
+                    <ul class="flex items-center gap-1">
+                        <li>
+                            <a href="" class="underline">
+                                Loja de Projetos
+                            </a>
+                        </li>
+                        <li>
+                            >
+                        </li>
+                        <li>
+                            <a href="" class="underline">Comprar Créditos</a>
+                        </li>
+                        <li>
+                            >
+                        </li>
+                        <li>
+                            <a href="" class="">Compra de créditos</a>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <div class="border-b w-270 pb-4 mb-8">
+                        <h2 class="text-2xl">
+                            Compra de pontos base
+                        </h2>
+                    </div>
+                    <article class="grid grid-cols-3 gap-8">
+                        <div class="bg-zinc-300 col-span-2 flex flex-col p-6 gap-4">
+                            <h3 class="self-start text-lg font-semibold">
+                                Limite mensal
+                            </h3>
+                            <p>
+                                Confira a quantidade de pontos disponível para compra
+                            </p>
+                            <progress class="progress progress-info w-134" value="50" max="100"></progress>
+                            <div class="flex justify-between">
+                                <div>
+                                    <p>
+                                        Comprado esse mês
+                                    </p>
+                                    <strong>
+                                        100 créditos
+                                    </strong>
+                                </div>
+                                <div class="flex flex-col">
+                                    <p>
+                                        Seu limite mensal
+                                    </p>
+                                    <strong class="self-end">
+                                        2.000 créditos
+                                    </strong>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="bg-zinc-300 p-6">
+                            <h3 class="mb-4">
+                                Informações
+                            </h3>
+                            <ul class="flex flex-col gap-4">
+                                <li class="flex items-center gap-1">
+                                    <i class="fa-solid fa-credit-card"></i>
+                                    <p>
+                                        Valor mínimo de
+                                    </p>
+                                    <strong>
+                                        100 créditos
+                                    </strong>
+                                </li>
+                                <li class="flex items-center gap-1">
+                                    <i class="fa-solid fa-calendar"></i>
+                                    <p>
+                                        Validade
+                                    </p>
+                                    <strong>
+                                        24 meses
+                                    </strong>
+                                </li>
+                                <li class="flex items-center gap-1">
+                                    <i class="fa-solid fa-money-bill-trend-up"></i>
+                                    <p>
+                                        Limite de compra mensal 
+                                    </p>
+                                    <strong>
+                                        2.000 créditos
+                                    </strong>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-zinc-300 col-span-3 p-6 flex gap-35">
+                            <div class="w-88 flex flex-col items-center gap-4 ">
+                                <h3 class="text-lg">
+                                    Quantidade de créditos para compra
+                                </h3>
+                                <div class="flex items-center gap-15">
+                                    <button class="border rounded-full w-8 h-8">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <h3 class="text-4xl border-b">
+                                        100
+                                    </h3>
+                                    
+                                    <button class="border rounded-full w-8 h-8">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                    
+                                </div>
+                                <p class="text-center">
+                                    Digite o valor aproximado
+                                </p>
+                            </div>
+                            <div class="flex flex-col gap-8">
+                                <h3 class="text-lg">
+                                    Total em Reais
+                                </h3>
+                                <h3 class="text-4xl">
+                                    R$20.000,00
+                                </h3>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+                <section>
+                    <div>
+                        <h4 class="flex items-center gap-2 text-lg font-semibold">
+                            Mais informações sobre o produto
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </h4>
+                        <hr class="max-w-278 my-3">
+
+                        <p class="max-w-[794px]">
+                            <strong class="font-bold">
+                                ATENÇÃO:
+                            </strong> A transferência dos pontos comprados para programas parceiros (Milhas) depende da elegibilidade do seu cartão de crédito. Consulte os cartões elegíveis na página do produto a partir do menu Viagens - Programas Parceiros.
+                        </p>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
