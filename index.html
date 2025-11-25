@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout</title>
+    <title>Layout Responsivo</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="pt-5">
-    <header class="container mx-auto mb-13">
+    <header class="container mx-auto mb-13 px-4">
         
         <nav class="flex justify-between items-center">
             <figure class="max-w-38">
-                <img src="img/logo.svg" alt="">
+                <img src="img/logo.svg" alt="Logo">
             </figure>
-            <menu class="flex gap-14 items-center max-md:hidden">
+            <menu class="hidden md:flex gap-14 items-center">
                 <li>
                     Sobre
                 </li>
@@ -33,25 +33,25 @@
                     </button>
                 </li>
             </menu>
-            <figure class="hidden max-md:inline-block">
-                <img src="img/menu.png" alt="">
+            <figure class="md:hidden">
+                <img src="img/menu.png" alt="Menu">
             </figure>
 
         </nav>
     </header>
-    <main class="container mx-auto">
-        <section class="hero bg-base-200 h-[508px] mb-10  max-md:max-h-[478px]">
+    <main class="container mx-auto px-4">
+        <section class="hero bg-base-200 h-auto min-h-[478px] md:h-[508px] mb-10">
             <div class="hero-content text-center">
-              <div class="max-w-md">
-                <h1 class="text-[44px] font-bold w-[500px] max-md:text-[34px] max-md:max-w-[408px]">Depois de muita espera, ela finalmente chegou!</h1>
-                <p class="py-6 max-md:max-w-[408px]">
+              <div class="max-w-full md:max-w-md">
+                <h1 class="text-[44px] font-bold w-full max-w-full md:w-[500px] md:max-w-none text-3xl md:text-[44px] mb-4">Depois de muita espera, ela finalmente chegou!</h1>
+                <p class="py-6 max-w-full md:max-w-[408px] mx-auto">
                     O formulário para aquisição da camisa está oficialmente aberto! Com um design original e dois modelos únicos, você vai poder mostrar todo o seu orgulho de fazer parte dessa turma incrível!
                 </p>
-                <div>
-                    <button class="btn btn-neutral py-[21px] px-[26px] mr-6">
+                <div class="flex  sm:flex-row justify-center items-center gap-4">
+                    <button class="btn btn-neutral py-[21px] px-[26px]  sm:w-auto">
                         <a href="#">Ser feliz agora</a>
                     </button>
-                    <button class="btn py-[21px] px-[36px]">
+                    <button class="btn py-[21px] px-[36px]  sm:w-auto">
                         <a href="">
                             Ficar triste
                         </a>
@@ -61,56 +61,59 @@
             </div>
 
         </section>
-        <section class="flex justify-center items-center ">
-            <ul class="flex items-center gap-33">
-                <li><img src="img/Brand Icon.png" alt=""></li>
-                <li><img src="img/Brand Icon(6).png" alt=""></li>
-                <li><img src="img/Brand Icon(5).png" alt=""></li>
-                <li><img src="img/Brand Icon(4).png" alt=""></li>
-                <li><img src="img/Brand Icon(3).png" alt=""></li>
-                <li><img src="img/Brand Icon(2).png" alt=""></li>
-                <li><img src="img/Brand Icon(1).png" alt=""></li>
+        <section class="flex justify-center items-center py-8">
+            <ul class="flex flex-wrap md:flex-nowrap justify-center items-center gap-8 md:gap-16 lg:gap-33">
+                <li><img src="img/Brand Icon.png" alt="Brand Icon"></li>
+                <li><img src="img/Brand Icon(6).png" alt="Brand Icon"></li>
+                <li><img src="img/Brand Icon(5).png" alt="Brand Icon"></li>
+                <li><img src="img/Brand Icon(4).png" alt="Brand Icon"></li>
+                <li><img src="img/Brand Icon(3).png" alt="Brand Icon"></li>
+                <li><img src="img/Brand Icon(2).png" alt="Brand Icon"></li>
+                <li><img src="img/Brand Icon(1).png" alt="Brand Icon"></li>
             </ul>
         </section>
-        <section class="mt-16 container mx-auto flex gap-23">
-            <div class="flex flex-col w-75 gap-3">
+        <section class="mt-16 flex flex-col md:flex-row gap-8 md:gap-23">
+            <div class="flex flex-col w-full md:w-75 gap-3">
                 <strong class="font-semibold">
                     Ela é bonita
                 </strong>
-                <span class="w-66">
+                <span class="w-full md:w-66">
                     Além de linda, é a mais top
                 </span>
             </div>
-            <div class="flex flex-col gap-3">
+            <div class="flex flex-col w-full md:w-75 gap-3">
                 <strong class="font-semibold">
                     O azul destaque
                 </strong>
-                <span class="w-66">
+                <span class="w-full md:w-66">
                     O azul royal ficou para trás. Contemple um azul esmeralda
                 </span>
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col w-full md:w-75">
                 <strong class="font-semibold">
                     Webeti
                 </strong>
-                <span class="w-66">
+                <span class="w-full md:w-66">
                     O nosso mascote é um gênio da informática.
                 </span>
             </div>
         </section>
-        <section class="flex flex-col justify-center items-center pb-20 border">
-            <figure class="w-500 h-100 mb-16 flex justify-center">
-                <img src="img/Image Container.png" alt="">
+        <section class="flex flex-col justify-center items-center py-16 border-t mt-16">
+            <figure class="w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mb-16 hidden md:flex justify-center ">
+                <img src="img/Image Container.png" alt="Imagem de destaque" class="w-full h-auto">
             </figure>
-            <h2 class="text-5xl mb-6">
+            <figure class="inline-block md:hidden">
+                <img src="img/nova_imagem.png" alt="">
+            </figure>
+            <h2 class="text-3xl md:text-5xl mb-6 text-center">
                 Alunos que já compraram.
             </h2>
-            <p class="w-157 text-xl text-center mb-12">
+            <p class="w-full max-w-xs md:max-w-md text-xl text-center mb-12">
                 Junte aos milhares de alunos de info que já estão vestindo a nossa camiseta linda e maravilhosa.
             </p>
-            <div class="grid grid-cols-3 gap-59">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-16 lg:gap-59 text-center">
                 <div>
-                    <h3 class="text-5xl">
+                    <h3 class="text-4xl md:text-5xl font-bold">
                         234+
                     </h3>
                     <p>
@@ -118,7 +121,7 @@
                     </p>
                 </div>
                 <div>
-                    <h3 class="text-5xl">
+                    <h3 class="text-4xl md:text-5xl font-bold">
                         38,903+
                     </h3>
                     <p>
@@ -126,7 +129,7 @@
                     </p>
                 </div>
                 <div>
-                    <h3 class="text-5xl">
+                    <h3 class="text-4xl md:text-5xl font-bold">
                         154+
                     </h3>
                     <p>
