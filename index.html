@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="pt-5">
     <header class="container mx-auto mb-13">
@@ -27,28 +28,32 @@
                     Alunos
                 </li>
                 <li>
-                    <button class="rounded-xl bg-black text-white w-31 h-11">
-                        Button
+                    <button class="btn btn-neutral rounded-xl">
+                        Documentos
                     </button>
                 </li>
             </menu>
         </nav>
     </header>
     <main class="container mx-auto">
-        <section class="flex flex-col bg-zinc-200 items-center justify-center gap-10 py-20 mb-16 border">
-            <h1 class="text-5xl font-semibold max-w-147 text-center">
-                Depois de muita espera, ela finalmente chegou!
-            </h1>
-            <p class="max-w-135 text-center">
-                O formulário para aquisição da camisa está oficialmente aberto! Com um design original e dois modelos únicos, você vai poder mostrar todo o seu orgulho de fazer parte dessa turma incrível!
-            </p>
-            <div class="flex gap-6">
-                <a href="" class="flex bg-black text-white w-40 h-16 items-center justify-center rounded-xl">
-                    Ser Feliz
-                </a>
-                <a href="" class="flex w-40 items-center justify-center border rounded-xl">
-                    Ser triste
-                </a>
+        <section class="hero bg-base-200 h-[508px] mb-10">
+            <div class="hero-content text-center">
+              <div class="max-w-md">
+                <h1 class="text-[44px] font-bold w-[500px]">Depois de muita espera, ela finalmente chegou!</h1>
+                <p class="py-6">
+                    O formulário para aquisição da camisa está oficialmente aberto! Com um design original e dois modelos únicos, você vai poder mostrar todo o seu orgulho de fazer parte dessa turma incrível!
+                </p>
+                <div>
+                    <button class="btn btn-neutral py-[21px] px-[26px] mr-6">
+                        <a href="#">Ser feliz agora</a>
+                    </button>
+                    <button class="btn py-[21px] px-[36px]">
+                        <a href="">
+                            Ficar triste
+                        </a>
+                    </button>
+                </div>
+              </div>
             </div>
         </section>
         <section class="flex justify-center items-center ">
