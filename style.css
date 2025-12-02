@@ -1,16 +1,65 @@
-@import "tailwindcss";
-@plugin "daisyui" {
-  themes: [
-    {
-      ifrn: {
-        "primary": "#2f6b48",
-        "secondary": "#1f4a32",
-        "accent": "#e63946",
-        "neutral": "#143021",
-        "base-100": "#ffffff",
-        "base-200": "#e6f2ea",
-        "base-300": "#c4e2d1",
-      },
-    },
-  ];
+
+:root[data-theme="ifrn"] {
+  /* --- Metadados do tema (vêm do DaisyUI, não são CSS puros) --- */
+  /* default: false;        -> este tema não é o default da aplicação */
+  /* prefersdark: false;    -> tema não é marcado como "dark" internamente */
+  /* color-scheme: "ifrn";  -> identificador do tema dentro do ecossistema DaisyUI */
+
+  /* --- Cores de base (fundos e textos genéricos) --- */
+
+  
+  color-scheme: "ifrn";
+  --color-base-100: oklch(74% 0.16 232.661);
+  --color-base-200: oklch(98% 0.003 247.858);
+  --color-base-300: oklch(98% 0.003 247.858);
+  --color-base-content: oklch(20% 0.042 265.755);
+  --color-primary: oklch(75% 0.183 55.934);
+  --color-primary-content: oklch(98% 0.003 247.858);
+  --color-secondary: oklch(55% 0.046 257.417);
+  --color-secondary-content: oklch(98% 0.018 155.826);
+  --color-accent: oklch(76% 0.233 130.85);
+  --color-accent-content: oklch(98% 0.031 120.757);
+  --color-neutral: oklch(14% 0.005 285.823);
+  --color-neutral-content: oklch(98% 0 0);
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(98% 0.003 247.858);
+  --color-success: oklch(76% 0.177 163.223);
+  --color-success-content: oklch(98% 0.003 247.858);
+  --color-warning: oklch(75% 0.183 55.934);
+  --color-warning-content: oklch(98% 0.003 247.858);
+  --color-error: oklch(64% 0.246 16.439);
+  --color-error-content: oklch(98% 0.003 247.858);
+  --radius-selector: 1rem;
+  --radius-field: 1rem;
+  --radius-box: 1rem;
+  --size-selector: 0.28125rem;
+  --size-field: 0.28125rem;
+  --border: 2px;
+  --depth: 1;
+  --noise: 1;
+
 }
+
+/* 
+Por que usar OKLCH?
+
+- Modelo perceptualmente uniforme:
+  A principal tese é garantir que mudanças numéricas em L, C e H tenham impacto visual
+  mais previsível para o usuário. Ou seja, ajustar “L” realmente clareia/escurece sem
+  distorcer a cor de forma inesperada, diferente do que acontece com RGB/HSL.
+
+- Controle fino de contraste e acessibilidade:
+  Ao trabalhar com Lightness (L) em uma escala mais alinhada com a visão humana,
+  fica mais simples montar pares de cores acessíveis e manter contraste mínimo
+  (por exemplo, WCAG) sem tanto “trial and error”.
+
+- Consistência de brand em múltiplos tons:
+  Ao variar apenas L ou C, você gera toda a hierarquia de superfícies (base-100, 200, 300,
+  etc.) mantendo o mesmo “hue” de marca, o que facilita alinhar identidade visual
+  com sistematização de UI.
+
+- Futuro da plataforma:
+  Navegadores modernos já dão suporte a oklch(), e o modelo vem sendo apontado
+  como padrão mais robusto para design systems. Em termos de estratégia de produto,
+  é uma aposta alinhada com boas práticas modernas de design de cor.
+*/
