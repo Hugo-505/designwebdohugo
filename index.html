@@ -4,57 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revisão</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
-    <!--
+    <div x-data="{ count: 0 }">
+        <button x-on:click="count++" class="btn btn-primary">Increment</button>
+    
+        <span x-text="count"></span>
+    </div>
+    <div x-data="{nome : 'Webeti'}">
+        <h1>
+            Olá, <span x-text="nome"></span>
+        </h1>
+    </div>
+    
 
-    breakpoints - pontos de parada
-    >> sm | md | lg | xl | 2xl
-    >> rem - o tamanho da fonte do html
-    1 rem = 100% da fonte
-    font 16px = 1rem
-    font 1.5rem = 150% * 16
+    <div x-data="{ aceso: false }">
+        <button @click="aceso = !aceso" class="btn btn-primary">
+            Interruptor
+        </button>
+        
+        Luz: <span x-text="aceso ? '💡' : '🌑'"></span>
+    </div>
+    
 
-    -- Tipografias
+    <div x-data="{ msg: '' }">
+        <input x-model="msg" placeholder="Digite...">
+        
+        <p>Você digitou: <b x-text="msg"></b></p>
+    </div>
+    
 
-    tamanhos - text-xl
-    font
-    alinhamento - text-center
-    peso - font-bold
+    <div x-data="{ n1: 0, n2: 0 }">
+    
+        <input x-model="n1" type="number">
+        +
+        <input x-model="n2" type="number">
+        
 
-    cores -- text-[cor]-nivel
-
-    -- box model
-    conteudo, padding, border, margin
-
-    0.25 - 25% - 1rem
-
-    paddings - p-4 = 4px
-    paddings - pt-4 = 4px
-
-    margin - m
-
-    border - border border-1 border-blue-600
-    rounded - rounded-md
-    shadow - shadow-md
-
-    ============
-
-    POSICIONAMENTO
-
-    ============
-
-    flex - flex
-    justify | align
-    gap >> gap-1
-
-    grid 
+        <span 
+        x-text="parseInt(n1) + parseInt(n2)"
+        
+        
+        :class="{ 
+            'text-red-500': (parseInt(n1)+parseInt(n2)) > 10,
+            'text-blue-500': (parseInt(n1)+parseInt(n2)) <= 10
+        }">
+        </span>
 
 
-    -->
-    <h1 class="text-center font-semibold text-3xl">
-        Melhor turma do mundo
-    </h1>
+        
+
+    </div>
+    <div x-data="{ texto: '' }">
+
+    <!-- 2. A CONEXÃO (Input <-> Var) -->
+    <textarea x-model="texto"></textarea>
+
+    <div>
+        <!-- 3. O FEEDBACK (Texto e Cor) -->
+        <span 
+        x-text="texto.length + '/20'"
+        :class="texto.length > 20 
+                ? 'text-red-600' 
+                : 'text-gray-400'">
+        </span>
+
+        <!-- 4. O GUARDA (Bloqueio) -->
+        <button 
+        :disabled="texto.length === 0 || 
+                    texto.length > 20">
+        Tweetar
+        </button>
+    </div>
+
+    </div>
+
+
+
+
+
+
 </body>
 </html>
