@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto Expandível - Alpine.js</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="p-8 max-w-2xl mx-auto">
+    
+    <div x-data="{ open: false }" class="space-y-4">
+
+        <div class=" max-w-none overflow-hidden transition-all duration-300"
+             :class="!open ? 'line-clamp-3' : 'line-clamp-none'">
+            <p>
+                Este é um texto longo que serve como exemplo para demonstrar a funcionalidade de expandir e colapsar conteúdo. 
+                O Alpine.js torna isso extremamente simples usando apenas algumas diretivas reativas. Imagine um parágrafo com 
+                várias linhas de conteúdo detalhado sobre desenvolvimento web, frameworks modernos, boas práticas de código e 
+                dicas para criar interfaces responsivas e acessíveis. Aqui você pode incluir qualquer tipo de conteúdo textual 
+                extenso, desde descrições de produtos até artigos completos ou instruções detalhadas de projetos.
+            </p>
+            <p>
+                A vantagem desta abordagem é que ela é totalmente reativa e não requer manipulação manual do DOM. 
+                O estado `open` controla tanto a exibição do texto quanto o botão apropriado, garantindo uma experiência 
+                fluida e sem bugs comuns de toggle manual.
+            </p>
+        </div>
+        
+        
+        <div class="flex gap-2">
+            <button x-show="!open" 
+                    @click="open = true"
+                    class="btn btn-info text-white rounded-lg  transition-colors">
+                Ler mais
+            </button>
+            <button x-show="open" 
+                    @click="open = false"
+                    class="btn   rounded-lg  transition-colors">
+                Ler menos
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>

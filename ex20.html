@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.js"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div x-data="{ mostrar: false }"
+     @mouseenter="mostrar = true"
+     @mouseleave="mostrar = false"
+     class="flex justify-center items-center" :class="scale-150: mostrar === true">
+        <img src="Dark_Side_of_the_Moon.png" alt="" :class="{'scale-150': mostrar === true}" class="object-cover transition-transform duration-700 ease-out ">
+    </div>
+
+    
+</body>
+</html>
