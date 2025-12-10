@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div x-data="{ tab: 1 }" class="space-y-4">
+        
+        <div class="flex gap-2">
+            <button @click="tab = 1" class="px-3 py-1 border"
+                    :class="tab === 1 ? 'bg-blue-500 text-white' : ''">
+            Tab 1
+            </button>
+
+            <button @click="tab = 2" class="px-3 py-1 border"
+                    :class="tab === 2 ? 'bg-blue-500 text-white' : ''">
+            Tab 2
+            </button>
+
+            <button @click="tab = 3" class="px-3 py-1 border"
+                    :class="tab === 3 ? 'bg-blue-500 text-white' : ''">
+            Tab 3
+            </button>
+        </div>
+
+        
+        <div x-show="tab === 1">
+            Conteúdo da Tab 1
+        </div>
+
+        <div x-show="tab === 2">
+            Conteúdo da Tab 2
+        </div>
+
+        <div x-show="tab === 3">
+            Conteúdo da Tab 3
+        </div>
+    </div>
+
+    
+</body>
+</html>
