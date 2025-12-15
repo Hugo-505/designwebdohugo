@@ -3,58 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revisão</title>
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
-    <!--
+    
 
-    breakpoints - pontos de parada
-    >> sm | md | lg | xl | 2xl
-    >> rem - o tamanho da fonte do html
-    1 rem = 100% da fonte
-    font 16px = 1rem
-    font 1.5rem = 150% * 16
+    
 
-    -- Tipografias
-
-    tamanhos - text-xl
-    font
-    alinhamento - text-center
-    peso - font-bold
-
-    cores -- text-[cor]-nivel
-
-    -- box model
-    conteudo, padding, border, margin
-
-    0.25 - 25% - 1rem
-
-    paddings - p-4 = 4px
-    paddings - pt-4 = 4px
-
-    margin - m
-
-    border - border border-1 border-blue-600
-    rounded - rounded-md
-    shadow - shadow-md
-
-    ============
-
-    POSICIONAMENTO
-
-    ============
-
-    flex - flex
-    justify | align
-    gap >> gap-1
-
-    grid 
+    <div x-data="{ tags: ['HTML'], novo: '' }">
+        <input x-model="novo" @keydown.enter="tags.push(novo); novo=''">
+        
+        <template x-for="tag in tags">
+            <span class="badge badge-error">
+                <span x-text="tag"></span>
+                <button @click="tags = tags.filter(t => t !== tag)" class="cursor-pointer">X</button>
+            </span>
+        </template>
+    </div>
+    <div>
+        <input type="text">
+        <template><span><span></span><button></button></span></template>
+    </div>
 
 
-    -->
-    <h1 class="text-center font-semibold text-3xl">
-        Melhor turma do mundo
-    </h1>
+
+
 </body>
 </html>
