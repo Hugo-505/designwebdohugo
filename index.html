@@ -1,60 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revisão</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Lista de Tarefas Reativa com Alpine.js Store (Corrigido)</title>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    
+    
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('tasks', {
+                
+                data: [
+                    { id: 1, text: 'Configurar Alpine.store', done: true },
+                    { id: 2, text: 'Implementar lógica computada', done: false },
+                    { id: 3, text: 'Criar interface reativa com x-for', done: false },
+                    { id: 4, text: 'Escrever documentação', done: true },
+                    { id: 5, text: 'Testar funcionalidade de filtro', done: false },
+                ],
+                currentFilter: 'all', 
+
+                
+                get filtered() {
+                    switch (this.currentFilter) {
+                        case 'done':
+                            return this.data.filter(task => task.done);
+                        case 'todo':
+                            return this.data.filter(task => !task.done);
+                        case 'all':
+                        default:
+                            return this.data;
+                    }
+                },
+                
+                
+                get totalTodo() {
+                    return this.data.filter(task => !task.done).length;
+                },
+
+                get totalDone() {
+                    return this.data.filter(task => task.done).length;
+                },
+
+                
+                toggle(id) {
+                    const task = this.data.find(t => t.id === id);
+                    if (task) {
+                        task.done = !task.done;
+                    }
+                },
+
+                // Função para adicionar uma tarefa
+                add(text) {
+                    if (text.trim() === '') return;
+                    // Gera um novo ID simples (o maior ID atual + 1)
+                    const newId = this.data.length > 0 ? Math.max(...this.data.map(t => t.id)) + 1 : 1;
+                    this.data.push({
+                        id: newId,
+                        text: text.trim(),
+                        done: false
+                    });
+                }
+            });
+        });
+    </script>
 </head>
-<body>
-    <!--
+<body x-data>
+    <h1>Minhas Tarefas</h1>
 
-    breakpoints - pontos de parada
-    >> sm | md | lg | xl | 2xl
-    >> rem - o tamanho da fonte do html
-    1 rem = 100% da fonte
-    font 16px = 1rem
-    font 1.5rem = 150% * 16
+    
+    <div x-data="{ newTask: '' }" class="add-task-form">
+        <input 
+            type="text" 
+            placeholder="Nova tarefa..." 
+            x-model="newTask"
+            @keydown.enter="$store.tasks.add(newTask); newTask = ''"
+        >
+        <button 
+            @click="$store.tasks.add(newTask); newTask = ''"
+            :disabled="newTask.trim() === ''"
+        >
+            Adicionar
+        </button>
+    </div>
 
-    -- Tipografias
+    <!-- Botões de Filtro - CORRIGIDO -->
+    <div class="filter-buttons" x-data>
+        <p>Filtrar por:</p>
+        <button 
+            @click="$store.tasks.currentFilter = 'all'" 
+            :class="{ 'active': $store.tasks.currentFilter === 'all' }"
+        >
+            Todas 
+        </button>
+        <button 
+            @click="$store.tasks.currentFilter = 'todo'" 
+            :class="{ 'active': $store.tasks.currentFilter === 'todo' }"
+        >
+            A Fazer  
+        </button>
+        <button 
+            @click="$store.tasks.currentFilter = 'done'" 
+            :class="{ 'active': $store.tasks.currentFilter === 'done' }"
+        >
+            Concluídas 
+        </button>
+    </div>
 
-    tamanhos - text-xl
-    font
-    alinhamento - text-center
-    peso - font-bold
+    <!-- Lista de Tarefas (Interface Reativa) -->
+    <ul class="task-list">
+        <!-- x-for percorrendo a propriedade computada $store.tasks.filtered -->
+        <template x-for="task in $store.tasks.filtered" :key="task.id">
+            <li class="task-item" :class="{ 'done': task.done }">
+                <span x-text="task.text"></span>
+                <input 
+                    type="checkbox" 
+                    :checked="task.done" 
+                    @change="$store.tasks.toggle(task.id)"
+                >
+            </li>
+        </template>
+    </ul>
 
-    cores -- text-[cor]-nivel
-
-    -- box model
-    conteudo, padding, border, margin
-
-    0.25 - 25% - 1rem
-
-    paddings - p-4 = 4px
-    paddings - pt-4 = 4px
-
-    margin - m
-
-    border - border border-1 border-blue-600
-    rounded - rounded-md
-    shadow - shadow-md
-
-    ============
-
-    POSICIONAMENTO
-
-    ============
-
-    flex - flex
-    justify | align
-    gap >> gap-1
-
-    grid 
-
-
-    -->
-    <h1 class="text-center font-semibold text-3xl">
-        Melhor turma do mundo
-    </h1>
+    <p x-show="$store.tasks.filtered.length === 0">Nenhuma tarefa encontrada para o filtro atual.</p>
 </body>
 </html>
