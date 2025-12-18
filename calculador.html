@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body x-data="{ servicos: [{nome: '', valor: 0}], novoservi:  }">
+    <div>
+      <input type="text" x-model="novoservi">
+      <button @click="servicos.push(novoservi); novoservi = ''" class="btn">
+        Clique
+      </button>
+      <ul>
+        <template x-for="(item, index) in servicos" :key="index">
+          <li x-text="item"></li>
+        </template>
+      </ul>
+    </div>
+</body>
+</html>
