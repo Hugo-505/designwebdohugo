@@ -1,34 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Orçamento</title>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
 </head>
-<body x-data="{ servicos: [], novoservi: {nome: '', valor: 0}, total() {
-  return this.servicos.reduce((sum, item) => sum + item.valor, 0);
-}}">
-    <div>
-      <input type="text" x-model="novoservi.nome">
-      <input type="number" x-model.number="novoservi.valor">
-      <button @click="
-      if (novoservi.nome && novoservi.valor) {
-        servicos.push({ ...novoservi });
-        novoservi.nome = '';
-        novoservi.valor = 0;
-      }" class="btn">
-        Clique
-      </button>
-      <ul>
-        <template x-for="(item, index) in servicos" :key="index">
-          <li x-text="item.nome + item.valor + 'real'"></li>
-          
-        </template>
-      </ul>
-      <span x-text="total()"></span>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div x-data="{ servicos: [], novoservi: {nome: '', valor: 0}, total() {
+        return this.servicos.reduce((sum, item) => sum + item.valor, 0);
+    }}" class="card w-full max-w-md bg-white shadow-xl rounded-xl">
+        
+        <div class="card-body p-6 pb-4">
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                    <span class="text-success-light font-bold text-lg">$</span>
+                </div>
+                <h1 class="text-xl font-semibold text-gray-800">
+                    Orçamento #001
+                </h1>
+            </div>
+
+            <div class="flex space-x-2 mb-6">
+                <input 
+                    type="text" 
+                    x-model="novoservi.nome" 
+                    placeholder="Nome do Serviço" 
+                    class="input input-bordered w-full input-sm"
+                >
+                <input 
+                    type="number" 
+                    x-model.number="novoservi.valor" 
+                    placeholder="Valor" 
+                    class="input input-bordered w-24 input-sm text-right"
+                >
+                <button 
+                    @click="
+                        if (novoservi.nome && novoservi.valor) {
+                            servicos.push({ ...novoservi });
+                            novoservi.nome = '';
+                            novoservi.valor = 0;
+                        }
+                    " 
+                    class="btn btn-primary btn-sm"
+                >
+                    +
+                </button>
+            </div>
+            
+            <ul class="space-y-1">
+                <template x-for="(item, index) in servicos" :key="index">
+                    <li class="flex justify-between items-center p-3 rounded-lg hover:bg-gray-50 transition duration-150">
+                        <span x-text="item.nome" class="text-gray-700 font-medium"></span>
+                        <span x-text="'R$ ' + item.valor" class="text-gray-600 font-semibold"></span>
+                    </li>
+                </template>
+            </ul>
+        </div>
+        
+        <div class="bg-[#1F2937] text-white p-4 rounded-b-xl mt-4">
+            <div class="flex justify-between items-center">
+                <span class="text-lg font-bold uppercase">TOTAL</span>
+                <span x-text="'R$ ' + total()" class="text-xl font-extrabold text-success"></span>
+            </div>
+        </div>
     </div>
 </body>
 </html>
